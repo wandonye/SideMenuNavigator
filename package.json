@@ -1,5 +1,5 @@
 {
-  "name": "PepperoniAppTemplate",
+  "name": "Linknitive",
   "author": "Futurice",
   "description": "React Native App Starter Kit for Android and iOS",
   "license": "MIT",
@@ -20,7 +20,7 @@
   "private": false,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "bundle:ios": "node ./node_modules/react-native/local-cli/cli.js bundle --platform ios --entry-file index.ios.js --bundle-output ios/PepperoniAppTemplate/main.jsbundle --dev=false --verbose",
+    "bundle:ios": "node ./node_modules/react-native/local-cli/cli.js bundle --platform ios --entry-file index.ios.js --bundle-output ios/Linknitive/main.jsbundle --dev=false --verbose",
     "test": "jest",
     "test:watch": "jest --watch",
     "lint": "eslint src test",
@@ -43,6 +43,7 @@
     "react": "~15.4.2",
     "react-dom": "~15.4.2",
     "react-native": "0.42.0",
+    "react-native-elements": "^0.10.0",
     "react-native-vector-icons": "^4.0.0",
     "react-navigation": "^1.0.0-beta.7",
     "react-redux": "^4.4.5",

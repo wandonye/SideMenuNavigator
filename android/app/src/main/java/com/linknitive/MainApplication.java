@@ -1,4 +1,4 @@
-package com.pepperoniapptemplate;
+package com.linknitive;
 
 import android.app.Application;
 
