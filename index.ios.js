@@ -5,7 +5,7 @@ import AppViewContainer from './src/modules/AppViewContainer';
 import React, {Component} from 'react';
 import {AppRegistry} from 'react-native';
 
-class Linknitive extends Component {
+class SideMenuNavigator extends Component {
   render() {
     return (
       <Provider store={store}>
@@ -15,4 +15,4 @@ class Linknitive extends Component {
   }
 }
 
-AppRegistry.registerComponent('Linknitive', () => Linknitive);
+AppRegistry.registerComponent('SideMenuNavigator', () => SideMenuNavigator);

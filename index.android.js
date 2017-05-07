@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 import {AppRegistry, BackAndroid} from 'react-native';
 import {NavigationActions} from 'react-navigation';
 
-class Linknitive extends Component {
+class SideMenuNavigator extends Component {
   componentWillMount() {
     BackAndroid.addEventListener('hardwareBackPress', this.navigateBack);
   }
@@ -34,4 +34,4 @@ class Linknitive extends Component {
   }
 }
 
-AppRegistry.registerComponent('Linknitive', () => Linknitive);
+AppRegistry.registerComponent('SideMenuNavigator', () => SideMenuNavigator);
