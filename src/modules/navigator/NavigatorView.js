@@ -14,7 +14,7 @@ class NavigatorView extends Component {
         key: PropTypes.string.isRequired,
         routeName: PropTypes.string.isRequired
       }))
-    }).isRequired
+    }).isRequired,
   };
 
   render() {

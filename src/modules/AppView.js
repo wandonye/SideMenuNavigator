@@ -1,5 +1,11 @@
 import React, {PropTypes, Component} from 'react';
-import {View, StyleSheet, StatusBar, ActivityIndicator, Image} from 'react-native';
+import {View,
+  StyleSheet,
+  StatusBar,
+  ActivityIndicator,
+  Image,
+  Dimensions,
+} from 'react-native';
 import NavigatorViewContainer from './navigator/NavigatorViewContainer';
 import * as snapshotUtil from '../utils/snapshot';
 import * as SessionStateActions from '../modules/session/SessionState';
@@ -10,33 +16,33 @@ import {
   ListItem,
   SideMenu
 } from 'react-native-elements';
+import {
+  setSideMenuState,
+  toggleSideMenuState
+} from './session/SessionState';
+
+const windowSize = Dimensions.get('window');
 
 class AppView extends Component {
   static displayName = 'AppView';
 
   static propTypes = {
     isReady: PropTypes.bool.isRequired,
+    isSideMenuOpen: PropTypes.bool.isRequired,
     dispatch: PropTypes.func.isRequired
   };
 
-  constructor () {
-    super()
-    this.state = {
-      isOpen: true
-    }
+  constructor (props) {
+    super(props)
     this.toggleSideMenu = this.toggleSideMenu.bind(this)
   }
 
   toggleSideMenu () {
-    this.setState({
-      isOpen: !this.state.isOpen
-    })
+    this.props.dispatch(toggleSideMenuState());
   }
 
   onSideMenuChange (isOpen: boolean) {
-    this.state = {
-      isOpen: isOpen
-    }
+    this.props.dispatch(setSideMenuState(isOpen));
   }
 
   componentDidMount() {
@@ -104,9 +110,11 @@ class AppView extends Component {
       </View>
     )
 
+    console.log(this.props.isSideMenuOpen);
     return (
       <SideMenu
-        isOpen={this.state.isOpen}
+        openMenuOffset={0.9*windowSize.width}
+        isOpen={this.props.isSideMenuOpen}
         onChange={this.onSideMenuChange.bind(this)}
         menu={MenuComponent}>
         <View style={{flex: 1}}>

@@ -5,7 +5,7 @@ import {
   StyleSheet
 } from 'react-native';
 
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import SmartIconContainer from '../navigator/SmartIconContainer';
 
 const color = () => Math.floor(255 * Math.random());
 
@@ -24,12 +24,9 @@ class ColorView extends Component {
       )
     }),
     // TODO: move this into global config?
-    header: {
-      tintColor: 'white',
-      style: {
-        backgroundColor: '#39babd'
-      }
-    }
+    header: ({ goBack }) => ({
+      left: ( <SmartIconContainer onPress={ () => { goBack() } }  /> ),
+    }),
   }
 
   static propTypes = {
